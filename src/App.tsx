@@ -174,29 +174,29 @@ function App() {
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Quantidade</label>
-                  <input
-                    type="number"
-                    min="1"
-                    className="w-full border rounded p-2"
-                    value={newItem.quantidade}
-                    onChange={e => setNewItem({ ...newItem, quantidade: Math.max(1, Number(e.target.value)) })}
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Preço</label>
-                  <input
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    className="w-full border rounded p-2"
-                    value={newItem.preco}
-                    onChange={e => setNewItem({ ...newItem, preco: Number(e.target.value) })}
-                  />
-                </div>
-              </div>
-              <div>
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">Quantidade</label>
+    <input
+      type="number"
+      min="1"
+      className="w-full border rounded p-2"
+      value={newItem.quantidade || ''} // Modificado aqui
+      onChange={e => setNewItem({ ...newItem, quantidade: e.target.value ? Math.max(1, Number(e.target.value)) : 0 })} // E aqui
+    />
+  </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">Preço</label>
+    <input
+      type="number"
+      min="0"
+      step="0.01"
+      className="w-full border rounded p-2"
+      value={newItem.preco || ''} // Modificado aqui
+      onChange={e => setNewItem({ ...newItem, preco: e.target.value ? Number(e.target.value) : 0 })} // E aqui
+    />
+  </div>
+</div>
+
                 <label className="block text-sm font-medium text-gray-700 mb-1">Categoria</label>
                 <select
                   className="w-full border rounded p-2"
