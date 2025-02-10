@@ -173,15 +173,15 @@ function App() {
                   onChange={e => setNewItem({ ...newItem, nome: e.target.value })}
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-  <div>
-    <label className="block text-sm font-medium text-gray-700 mb-1">Quantidade</label>
-    <input
-      type="number"
-      min="1"
-      className="w-full border rounded p-2"
-      value={newItem.quantidade || ''} // Modificado aqui
-      onChange={e => setNewItem({ ...newItem, quantidade: e.target.value ? Math.max(1, Number(e.target.value)) : 0 })} // E aqui
+            <div className="grid grid-cols-2 gap-4">
+        <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Quantidade</label>
+              <input
+                type="number"
+                 min="1"
+                 className="w-full border rounded p-2"
+                 value={newItem.quantidade || ''} // Modificado aqui
+         onChange={e => setNewItem({ ...newItem, quantidade: e.target.value ? Math.max(1, Number(e.target.value)) : 0 })} // E aqui
     />
   </div>
   <div>
@@ -197,6 +197,7 @@ function App() {
   </div>
 </div>
 
+              <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Categoria</label>
                 <select
                   className="w-full border rounded p-2"
